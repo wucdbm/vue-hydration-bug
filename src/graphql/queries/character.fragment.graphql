@@ -1,0 +1,12 @@
+fragment character on Character {
+    id
+    name
+    type
+    status
+    image
+    location {
+        name
+        type
+        dimension
+    }
+}

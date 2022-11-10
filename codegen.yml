@@ -1,0 +1,23 @@
+generates:
+    src/graphql/index.ts:
+        overwrite: true
+        schema: '${RICK_AND_MORTY_URL:https://rickandmortyapi.com/graphql}'
+        documents:
+            - 'src/graphql/**/*.graphql'
+        plugins:
+            - 'typescript'
+            - 'typescript-operations'
+            - 'typescript-vue-urql'
+        config:
+            enumsAsTypes: true
+            nonOptionalTypename: true
+            avoidOptionals:
+                field: true
+                inputValue: false
+                object: true
+                defaultValue: true
+            onlyOperationTypes: true
+
+hooks:
+    afterAllFileWrite:
+        - yarn eslint --fix --ext .ts,json

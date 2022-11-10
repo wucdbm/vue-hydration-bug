@@ -1,0 +1,11 @@
+query init($page: Int!) {
+    episodes(page: $page) {
+        results {
+            ...episode
+        }
+        info {
+            count
+            pages
+        }
+    }
+}

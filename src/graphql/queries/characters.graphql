@@ -1,0 +1,11 @@
+query characters {
+    characters {
+
+        info {
+            count
+        }
+        results {
+            ...character
+        }
+    }
+}

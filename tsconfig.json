@@ -1,0 +1,54 @@
+{
+    "compilerOptions": {
+        "target": "esnext",
+        "module": "esnext",
+        "moduleResolution": "node",
+        "strict": true,
+        "jsx": "preserve",
+        "sourceMap": true,
+        "resolveJsonModule": true,
+        "esModuleInterop": true,
+        "emitDecoratorMetadata": true,
+        "experimentalDecorators": true,
+        "allowJs": true,
+        "lib": [
+            "esnext",
+            "dom",
+            "dom.iterable",
+            "scripthost",
+            "WebWorker"
+        ],
+        "typeRoots": [
+            "./src/types",
+            "./node_modules/@types"
+        ],
+        "importHelpers": true,
+        "skipLibCheck": true,
+        "allowSyntheticDefaultImports": true,
+        "baseUrl": ".",
+        "paths": {
+            "@/*": [
+                "./src/*"
+            ]
+        },
+        "types": [
+            "vitest",
+            "vue",
+            "vite/client",
+            "vitest/importMeta"
+        ]
+    },
+    "include": [
+        "src/**/*.ts",
+        "src/**/*.d.ts",
+        "src/**/*.tsx",
+        "src/**/*.vue",
+        "tests-unit/**/*.ts"
+    ],
+    "exclude": [
+        "node_modules",
+        "dist",
+        "public/sw.js",
+        "tests"
+    ]
+}

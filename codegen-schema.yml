@@ -1,0 +1,15 @@
+generates:
+    ./src/graphql/api.schema.json:
+        overwrite: true
+        schema: '${RICK_AND_MORTY_URL:https://rickandmortyapi.com/graphql}'
+        plugins:
+            - 'introspection'
+    ./src/graphql/api.schema.ts:
+        overwrite: true
+        schema: '${RICK_AND_MORTY_URL:https://rickandmortyapi.com/graphql}'
+        plugins:
+            - 'urql-introspection'
+
+hooks:
+    afterAllFileWrite:
+        - yarn eslint --fix --ext .ts,json

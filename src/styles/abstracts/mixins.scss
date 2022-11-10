@@ -1,0 +1,37 @@
+@use "sass:map";
+
+$breakpoints: (
+    320: 'min-width: 320px',
+    360: 'min-width: 360px',
+    410: 'min-width: 410px',
+    640: 'min-width: 640px',
+    768: 'min-width: 768px',
+    1024: 'min-width: 1024px',
+    1140: 'min-width: 1140px',
+    1280: 'min-width: 1280px',
+    1360: 'min-width: 1360px',
+    1440: 'min-width: 1440px',
+    1600: 'min-width: 1600px',
+) !default;
+
+@mixin min-width($breakpoint) {
+    $raw-query: map.get($breakpoints, $breakpoint);
+
+    @if $raw-query {
+        $query: $raw-query;
+
+        @media (#{$query}) {
+            @content;
+        }
+    } @else {
+        @error 'No value found for `#{$breakpoint}`. Please make sure it is defined in `$breakpoints` map.';
+    }
+}
+
+@mixin fixed {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}

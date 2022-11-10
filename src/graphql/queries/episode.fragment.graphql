@@ -1,0 +1,6 @@
+fragment episode on Episode {
+    episode
+    characters {
+        name
+    }
+}
